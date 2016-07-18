@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160717063212) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "humen", force: :cascade do |t|
     t.string   "nombre"
     t.string   "sexo"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160717063212) do
     t.integer  "user_id"
   end
 
-  add_index "humen", ["user_id"], name: "index_humen_on_user_id"
+  add_index "humen", ["user_id"], name: "index_humen_on_user_id", using: :btree
 
   create_table "patients", force: :cascade do |t|
     t.date     "fecha"
@@ -47,8 +50,8 @@ ActiveRecord::Schema.define(version: 20160717063212) do
     t.integer  "user_id"
   end
 
-  add_index "patients", ["human_id"], name: "index_patients_on_human_id"
-  add_index "patients", ["user_id"], name: "index_patients_on_user_id"
+  add_index "patients", ["human_id"], name: "index_patients_on_human_id", using: :btree
+  add_index "patients", ["user_id"], name: "index_patients_on_user_id", using: :btree
 
   create_table "patients_tags", force: :cascade do |t|
     t.integer "patient_id"
@@ -76,7 +79,10 @@ ActiveRecord::Schema.define(version: 20160717063212) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "humen", "users"
+  add_foreign_key "patients", "humen"
+  add_foreign_key "patients", "users"
 end
