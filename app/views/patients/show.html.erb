@@ -12,50 +12,57 @@
   <h1>Ficha de Atencion</h1>
 </div>
 
-<dl class="dl-horizontal">
+<div class="panel panel-default">
+  <div class="panel-body">
 
-  <dt>Nombre:</dt>
-  <dd><%= @human.nombre %></dd>
 
-  <dt>Sexo:</dt>
-  <dd><%= @human.sexo %></dd>
+    <dl class="dl-horizontal">
 
-  <dt>Edad:</dt>
-  <dd><%= @human.edad %> años</dd>
+      <dt>Nombre:</dt>
+      <dd><%= @human.nombre %></dd>
 
-  <dt>Ocupacion:</dt>
-  <dd><%= @human.ocupacion %></dd>
+      <dt>Sexo:</dt>
+      <dd><%= @human.sexo %></dd>
 
-  <dt>Estado civil:</dt>
-  <dd><%= @human.estado_civil %></dd>
+      <dt>Edad:</dt>
+      <dd><%= @human.edad %> años</dd>
 
-  <dt>Fecha Atencion:</dt>
-  <dd><%= @patient.fecha.strftime("%d/%m/%Y") %></dd>  
+      <dt>Ocupacion:</dt>
+      <dd><%= @human.ocupacion %></dd>
 
-  <dt>Descripcion:</dt>
-  <dd><%= raw @human.descripcion_del_paciente %></dd>
+      <dt>Estado civil:</dt>
+      <dd><%= @human.estado_civil %></dd>
 
-  <hr>
-  
-  <dt>Anamnesis:</dt>
-  <dd><%= raw @patient.anamnesis %></dd>
-  <br>
-  <dt>Hora de inicio:</dt>
-  <dd><%= @patient.hora_de_inicio.strftime("%H:%M") %> Hrs.</dd>
-  <br>
-  <dt>Desarrollo sesion:</dt>
-  <dd><%= raw @patient.desarrollo_de_la_sesion %></dd>
-  <br>
-  <dt>Hora de termino:</dt>
-  <dd><%= @patient.hora_de_termino.strftime("%H:%M") %> Hrs.</dd>
-  <br>
-  <dt>Comentarios:</dt>
-  <dd><%= raw @patient.comentarios %></dd>
-  <br>
+      <dt>Fecha Atencion:</dt>
+      <dd><%= @patient.fecha.strftime("%d/%m/%Y") %></dd>  
 
-  <dt>Etiquetas:</dt>
-  <dd><%= @patient.tags.map {|c| c.etiqueta}.join(', ') %></dd>
+      <dt>Descripcion:</dt>
+      <dd><%= raw @human.descripcion_del_paciente %></dd>
 
-</dl>
+      <hr>
+      
+      <dt>Anamnesis:</dt>
+      <dd><%= raw @patient.anamnesis %></dd>
+      <br>
+      <dt>Hora de inicio:</dt>
+      <dd><%= @patient.hora_de_inicio.strftime("%H:%M") %> Hrs.</dd>
+      <br>
+      <dt>Desarrollo sesion:</dt>
+      <dd><%= raw @patient.desarrollo_de_la_sesion %></dd>
+      <br>
+      <dt>Hora de termino:</dt>
+      <dd><%= @patient.hora_de_termino.strftime("%H:%M") %> Hrs.</dd>
+      <br>
+      <dt>Comentarios:</dt>
+      <dd><%= raw @patient.comentarios %></dd>
+      <br>
+
+      <dt>Etiquetas:</dt>
+      <dd><%= @patient.tags.map {|c| c.etiqueta}.join(', ') %></dd>
+
+    </dl>
+
+  </div>
+</div>    
 
 <br>
