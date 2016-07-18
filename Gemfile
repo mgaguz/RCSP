@@ -28,6 +28,8 @@ gem 'bootstrap-generators', '~> 3.3.4'
 
 gem 'devise'
 
+gem 'rails-i18n'
+
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
 # Use ActiveModel has_secure_password
