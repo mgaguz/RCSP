@@ -10,26 +10,31 @@
   <h1>Paciente</h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Nombre:</dt>
-  <dd><%= @human.nombre %></dd>
+<div class="panel panel-default">
+  <div class="panel-body">
 
-  <dt>Sexo:</dt>
-  <dd><%= @human.sexo %></dd>
+    <dl class="dl-horizontal">
+      <dt>Nombre:</dt>
+      <dd><%= @human.nombre %></dd>
 
-  <dt>Edad:</dt>
-  <dd><%= @human.edad %> años.</dd>
+      <dt>Sexo:</dt>
+      <dd><%= @human.sexo %></dd>
 
-  <dt>Ocupacion:</dt>
-  <dd><%= @human.ocupacion %></dd>
+      <dt>Edad:</dt>
+      <dd><%= @human.edad %> años.</dd>
 
-  <dt>Estado civil:</dt>
-  <dd><%= @human.estado_civil %></dd>
-<hr>
-  <dt>Descripcion:</dt>
-  <dd><%= raw @human.descripcion_del_paciente %></dd>
-<hr>
-  <dt>Comentarios:</dt>
-  <dd><%= raw @human.comentarios %></dd>
+      <dt>Ocupacion:</dt>
+      <dd><%= @human.ocupacion %></dd>
 
-</dl>
+      <dt>Estado civil:</dt>
+      <dd><%= @human.estado_civil %></dd>
+    <hr>
+      <dt>Descripcion:</dt>
+      <dd><%= raw @human.descripcion_del_paciente %></dd>
+    <hr>
+      <dt>Comentarios:</dt>
+      <dd><%= raw @human.comentarios %></dd>
+    </dl>
+
+  </div>
+</div>
