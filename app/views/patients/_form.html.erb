@@ -1,0 +1,108 @@
+
+<dl class="dl-horizontal">
+  <dt>Nombre:</dt>
+  <dd><%= @human.nombre %></dd>
+
+  <dt>Sexo:</dt>
+  <dd><%= @human.sexo %></dd>
+
+  <dt>Edad:</dt>
+  <dd><%= @human.edad %> años.</dd>
+
+  <dt>Ocupacion:</dt>
+  <dd><%= @human.ocupacion %></dd>
+
+  <dt>Estado civil:</dt>
+  <dd><%= @human.estado_civil %></dd>
+
+  <dt>Descripcion:</dt>
+  <dd><%= raw @human.descripcion_del_paciente %></dd>
+
+  <dt>Comentarios:</dt>
+  <dd><%= raw @human.comentarios %></dd>
+
+</dl>
+
+  <hr>
+
+  <%= form_for([@patient.human,@patient], html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @patient.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h4>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label 'Fecha Atencion', class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.date_select :fecha, order: [:day, :month, :year], class: "form-control" %>
+    </div>
+  </div>
+
+  <br>
+  <div class="form-group">
+    <%= f.label :anamnesis, class: "col-sm-2 control-label" %>
+    
+    <div class="col-sm-10">
+      <%= f.cktext_area :anamnesis, cols: 40, ckeditor: { toolbar: 'mini' } %>
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :hora_de_inicio, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.time_select :hora_de_inicio, order: [:Hour, :Minute], class: "form-control" %> hrs.
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :desarrollo_de_la_sesion, class: "col-sm-2 control-label" %>
+    
+    <div class="col-sm-10">
+      <%= f.cktext_area :desarrollo_de_la_sesion, cols: 40, ckeditor: { toolbar: 'mini' } %>
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :hora_de_termino, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.time_select :hora_de_termino, order: [:Hour, :Minute], class: "form-control" %> hrs.
+    </div>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <%= f.label 'Comentarios de la sesion', class: "col-sm-2 control-label" %>
+    
+    <div class="col-sm-10">
+      <%= f.cktext_area :comentarios, cols: 40, ckeditor: { toolbar: 'mini' } %>
+    </div>
+  </div>
+  <br>
+ 
+
+  <div class="form-group">
+    <div class="col-sm-2 control-label">
+      Temas
+    </div> 
+    <div class="col-sm-10"> 
+      <%= collection_check_boxes(:patient, :tag_ids, @tags, :id, :etiqueta) %>
+    </div>  
+  </div>
+
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit :value => "Guardar", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+<br>

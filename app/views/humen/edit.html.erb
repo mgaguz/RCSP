@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%= link_to humen_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Volver
+  <% end %>
+  <%= link_to @human, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Ver
+  <% end %>
+  <h1>Editar Paciente</h1>
+</div>
+
+<%= render 'form' %>

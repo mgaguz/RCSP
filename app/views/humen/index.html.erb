@@ -1,0 +1,42 @@
+<div class="page-header">
+  <%= link_to new_human_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    Nuevo Paciente
+  <% end %>
+  <h1>Pacientes</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+            <th>Nombre</th>
+            <th>Sexo</th>
+            <th>Edad</th>
+            <th>Ocupacion</th>
+            <th>Estado civil</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @humen) do |human| %>
+            <td><%= human.nombre %></td>
+            <td><%= human.sexo %></td>
+            <td><%= human.edad %></td>
+            <td><%= human.ocupacion %></td>
+            <td><%= human.estado_civil %></td>
+
+            <td><%= link_to 'Ver', human %></td>
+        <td><%= link_to 'Editar', edit_human_path(human) %></td>
+        <td><%= link_to 'Ver Atenciones', human_patients_path(human) %></td>
+        <td><%= link_to 'Nueva Atencion', new_human_patient_path(human) %></td>
+        <td><%= link_to 'Borrar', human, method: :delete, data: { confirm: 'Seeeeeguro?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

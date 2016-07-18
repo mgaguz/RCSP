@@ -1,0 +1,1 @@
+json.extract! @patient, :id, :fecha, :nombre, :sexo, :edad, :ocupacion, :estado_civil, :descripcion_del_paciente, :anamnesis, :hora_de_inicio, :desarrollo_de_la_sesion, :hora_de_termino, :comentarios, :created_at, :updated_at

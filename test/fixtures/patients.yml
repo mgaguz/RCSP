@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2016-07-09
+  nombre: MyString
+  sexo: MyString
+  edad: 1
+  ocupacion: MyString
+  estado_civil: MyString
+  descripcion_del_paciente: MyText
+  anamnesis: MyText
+  hora_de_inicio: 2016-07-09 18:39:52
+  desarrollo_de_la_sesion: MyText
+  hora_de_termino: 2016-07-09 18:39:52
+  comentarios: MyText
+
+two:
+  fecha: 2016-07-09
+  nombre: MyString
+  sexo: MyString
+  edad: 1
+  ocupacion: MyString
+  estado_civil: MyString
+  descripcion_del_paciente: MyText
+  anamnesis: MyText
+  hora_de_inicio: 2016-07-09 18:39:52
+  desarrollo_de_la_sesion: MyText
+  hora_de_termino: 2016-07-09 18:39:52
+  comentarios: MyText

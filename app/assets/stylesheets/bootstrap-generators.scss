@@ -1,0 +1,48 @@
+@import "bootstrap-variables.scss";
+@import "bootstrap-sprockets.scss";
+@import "bootstrap.scss";
+
+body {
+  padding-top: $navbar-height + 10px;
+}
+
+.page-header {
+  a.btn {
+    float: right;
+  }
+
+  a.btn + a.btn {
+    margin-right: 8px;
+  }
+}
+
+input[type="radio"], input[type="checkbox"] {
+  width: initial;
+  height: initial;
+  margin-top: 7px;
+  margin-right: 3px;
+  margin-left: 7px;
+}
+
+panel-login{
+  
+  line-height: 3;
+}
+
+.panel-login {
+width: 300px;
+margin: 0 auto; 
+background-color: transparent;
+color: #fff;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+margin-top: 60px;
+background-color: rgba(0, 0, 0, .6);
+font-family: 'Ubuntu', sans-serif;
+
+}
+
+.panel-login a {
+  color: #fff;
+}

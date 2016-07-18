@@ -1,0 +1,62 @@
+<%= form_for(@human, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @human.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@human.errors.count, "error") %> prohibited this human from being saved:</h4>
+
+      <ul>
+      <% @human.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nombre, class: "col-sm-2 control-label" %>
+    <div class="col-sm-7">
+      <%= f.text_field :nombre, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sexo, class: "col-sm-2 control-label" %>
+    <div class="col-sm-2">
+      <%= f.text_field :sexo, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :edad, class: "col-sm-2 control-label" %>
+    <div class="col-sm-1">
+      <%= f.number_field :edad, class: "form-control"%>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ocupacion, class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :ocupacion, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado_civil, class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :estado_civil, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Descripcion', class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.cktext_area :descripcion_del_paciente, cols: 40, ckeditor: { toolbar: 'mini' } %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :comentarios, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.cktext_area :comentarios, cols: 40, ckeditor: { toolbar: 'mini' } %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit 'Guardar', class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

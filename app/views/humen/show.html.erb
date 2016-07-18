@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to humen_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Volver
+  <% end %>
+  <%= link_to edit_human_path(@human), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <h1>Paciente</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Nombre:</dt>
+  <dd><%= @human.nombre %></dd>
+
+  <dt>Sexo:</dt>
+  <dd><%= @human.sexo %></dd>
+
+  <dt>Edad:</dt>
+  <dd><%= @human.edad %> años.</dd>
+
+  <dt>Ocupacion:</dt>
+  <dd><%= @human.ocupacion %></dd>
+
+  <dt>Estado civil:</dt>
+  <dd><%= @human.estado_civil %></dd>
+
+  <dt>Descripcion:</dt>
+  <dd><%= raw @human.descripcion_del_paciente %></dd>
+
+  <dt>Comentarios:</dt>
+  <dd><%= raw @human.comentarios %></dd>
+
+</dl>
