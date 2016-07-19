@@ -5,8 +5,8 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    human = current_user.humen.find(params[:human_id])
-    @patients = human.patients
+    @human = current_user.humen.find(params[:human_id])
+    @patients = @human.patients
   end
 
   # GET /patients/1
