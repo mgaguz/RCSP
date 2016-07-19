@@ -16,26 +16,32 @@
   <dt>Atenciones:</dt>
   <dd>
 
-    <div class="table-responsive">
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>Nombre Paciente</th>
-            <th>Fecha de atencion</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @tag.patients.each do |k| %>
-            <tr>
-              <td>
-                <a href="/pacientes/<%=k.human_id%>/atenciones/<%=k.id%>"><%=k.nombre%></a>
-              </td>
-              <td><%=k.fecha.strftime('%d/%m/%Y') %></td>
-            </tr>
-          <%end%>  
-        </tbody>
-      </table>
-    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Nombre Paciente</th>
+                <th>Fecha de atencion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @tag.patients.each do |k| %>
+                <tr>
+                  <td>
+                    <a href="/pacientes/<%=k.human_id%>/atenciones/<%=k.id%>"><%=k.nombre%></a>
+                  </td>
+                  <td><%=k.fecha.strftime('%d/%m/%Y') %></td>
+                </tr>
+              <%end%>  
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>   
 
   </dd>
 
